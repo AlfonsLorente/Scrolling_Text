@@ -18,20 +18,62 @@
         android:textStyle="bold"
         android:text="@string/article_title"/>
 
-    <TextView
-        android:id="@+id/article_subheading"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/article_heading"
-        android:padding="@dimen/padding_regular"
-        android:textAppearance="@android:style/TextAppearance"
-        android:text="@string/article_subtitle"/>
+        android:layout_above="@id/comment_button">
 
-    <TextView
-        android:id="@+id/article"
-        android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/linearLayoutTextView"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/article_subheading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_regular"
+                android:text="@string/article_subtitle"
+                android:textAppearance="@android:style/TextAppearance" />
+
+            <TextView
+                android:id="@+id/article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/article_subheading"
+                android:autoLink="web"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/article_text" />
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/article"
+                android:lineSpacingExtra="5sp"
+                android:text="@string/article_text" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/comment_button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:lineSpacingExtra="5sp"
-        android:layout_below="@id/article_subheading"
-        android:text=""/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:onClick="writeCommentary"
+        android:background="@color/grey"
+        android:backgroundTint="@color/grey"
+        android:text="@string/comment_button"
+        android:textColor="#FFFFFF"
+        android:visibility="visible">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
 </RelativeLayout>
