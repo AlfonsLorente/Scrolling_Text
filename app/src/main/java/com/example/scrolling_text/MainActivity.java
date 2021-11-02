@@ -4,18 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
     //private static final String FILENAME = "app/src/main/res/raw/article.txt";
@@ -47,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createTextView() {
         Intent intent = getIntent();
-        String message = intent.getStringExtra(CommentaryInput.EXTRA_MESSAGE);
+        String message = intent.getStringExtra(ComentaryInput.EXTRA_MESSAGE);
         TextView textView = new TextView(this);
         textView.setText("Commentary: " + "\n" + message + "\n");
         linearLayout.addView(textView);
@@ -57,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void writeCommentary(View view) {
         counter++;
-        Intent intent = new Intent(this, CommentaryInput.class);
+        Intent intent = new Intent(this, ComentaryInput.class);
         startActivity(intent);
     }
 
@@ -70,33 +62,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("Pene", "Me mueroooo");
+        Log.d("LOG", "Me mueroooo");
     }
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("Pene", "Me pausooo");
+        Log.d("LOG", "Me pausooo");
     }
 
-/*
-    private StringBuffer getArticle() {
-        StringBuffer stringBuffer = new StringBuffer();
-        InputStream inputStream = this.getResources().openRawResource(R.raw.article);
-
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
-
-            String data;
-
-            while ((data = bufferedReader.readLine()) != null) {
-                stringBuffer.append(data + "\n");
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return stringBuffer;
-
-    }
-    */
 
 }

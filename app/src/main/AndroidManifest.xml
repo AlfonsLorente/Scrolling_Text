@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Scrolling_Text">
-        <activity android:name=".CommentaryInput"
+        <activity android:name=".ComentaryInput"
             android:parentActivityName=".MainActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
